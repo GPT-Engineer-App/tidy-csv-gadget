@@ -46,7 +46,7 @@ const CSVEditor = () => {
     <div className="container mx-auto p-4 bg-background text-foreground">
       <h1 className="text-3xl font-bold mb-4 text-primary">CSV Editor</h1>
       
-      <div {...getRootProps()} className="border-2 border-dashed border-primary rounded-lg p-8 mb-4 text-center cursor-pointer bg-secondary">
+      <div {...getRootProps()} className="border-2 border-dashed border-primary rounded-lg p-8 mb-4 text-center cursor-pointer bg-red-50">
         <input {...getInputProps()} />
         {isDragActive ? (
           <p>Drop the CSV file here ...</p>
@@ -58,9 +58,9 @@ const CSVEditor = () => {
       {data.length > 0 && (
         <>
           <div className="mb-4 space-x-2">
-            <Button onClick={addRow} className="bg-primary text-primary-foreground hover:bg-primary/90">Add Row</Button>
+            <Button onClick={addRow} className="bg-red-600 text-white hover:bg-red-700">Add Row</Button>
             <CSVLink data={[headers, ...data]} filename={`edited_${fileName}`}>
-              <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90">Download CSV</Button>
+              <Button className="bg-red-100 text-red-800 hover:bg-red-200">Download CSV</Button>
             </CSVLink>
           </div>
 
@@ -86,7 +86,7 @@ const CSVEditor = () => {
                       </TableCell>
                     ))}
                     <TableCell>
-                      <Button variant="destructive" onClick={() => deleteRow(rowIndex)} className="bg-destructive text-destructive-foreground hover:bg-destructive/90">Delete</Button>
+                      <Button variant="destructive" onClick={() => deleteRow(rowIndex)} className="bg-red-700 text-white hover:bg-red-800">Delete</Button>
                     </TableCell>
                   </TableRow>
                 ))}
